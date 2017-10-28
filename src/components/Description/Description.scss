@@ -1,0 +1,16 @@
+@import "../../static/css/_theme.scss";
+
+.description {
+  margin-bottom: 10px;
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.description__text {
+  color: $white;
+  h1 {
+    color: $white;
+  }
+}

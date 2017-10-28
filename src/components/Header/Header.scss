@@ -1,0 +1,13 @@
+@import "../../static/css/_theme.scss";
+
+.header {
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+
+.header__text {
+  color: $white;
+  h1 {
+    color: $white;
+  }
+}

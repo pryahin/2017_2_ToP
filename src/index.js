@@ -1,38 +1,31 @@
-import signUp from './views/registration/registration.xml';
+import Main from './views/Main/Main';
+import About from './views/About/About';
+import SinglePlayer from './views/SinglePlayer/SinglePlayer';
+import SignUp from './views/SignUp/SignUp';
+import SignIn from './views/SignIn/SignIn';
 
-const main = document.getElementById("main");
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Loading from './components/Loading/Loading';
+import TopComponent from './components/TopComponent/TopComponent';
 
-//background
-main.style.background = 'url(static/img/backgrounds/' + Math.floor(Math.random() * 3) + '.jpg) no-repeat center fixed';
-main.style.backgroundSize = 'cover';
+import CreateTopRouter from './modules/CreateTopRouter/CreateTopRouter';
 
-const loadRegistration = () => {
-    main.innerHTML = signUp({title: "Наша"});
-
-    const inp = document.getElementsByClassName("reginput");
-
-    Object.keys(inp).forEach(el => {
-        inp[el].addEventListener("focus", function () {
-            this.classList.remove("input-error");
-        }, false);
-    });
-
-    document.getElementById('registrationSubmit').addEventListener('click', () => {
-        let valid = true;
-        Object.keys(inp).forEach(el => {
-            if (inp[el].value == "") {
-                inp[el].classList.add("input-error");
-                valid = false;
-            }
-            else {
-                inp[el].classList.remove("input-error");
-            }
-        });
-
-        if (valid) {
-            document.forms["registration-form"].submit();
-        }
-    });
-}
-
-loadRegistration();
+CreateTopRouter('main', [
+    {
+        path: '',
+        component: Main
+    },
+    {
+        path: '/signup',
+        component: SignUp
+    },
+    {
+        path: '/signin',
+        component: SignIn
+    },
+    {
+        path: '/singleplayer',
+        component: SinglePlayer
+    }
+], [new Header(), Loading, new TopComponent('div', {'class': 'content'}), new Footer()]);

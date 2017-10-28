@@ -1,0 +1,130 @@
+@import "../../static/css/_config.scss";
+@import "../Button/Button.scss";
+
+/**** Форма ****/
+
+.form-box {
+  margin-top: 20px;
+}
+
+.form-box__top {
+  overflow: hidden;
+  padding: 0 20px 0px 25px;
+  background: $dark-gray;
+  background: $black;
+  border-radius: 4px 4px 0 0;
+  text-align: left;
+}
+
+.form-box__top-left {
+  float: left;
+  width: 75%;
+  padding-top: 25px;
+
+  h3 {
+    margin-top: 0;
+    color: $white;
+  }
+  p {
+    opacity: 0.8;
+    color: $white;
+  }
+}
+
+.form-box__top-right {
+  float: right;
+  width: 25%;
+  padding-top: 5px;
+  font-size: 66px;
+  color: $white;
+  line-height: 100px;
+  text-align: right;
+  opacity: 0.3;
+}
+
+.form-box__bottom {
+  padding: 25px 25px 30px 30px;
+  background: $light-black;
+  text-align: left;
+
+  form input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  form {
+    position: relative;
+
+    .input-error {
+      border-color: $error-color;
+    }
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 0px;
+      margin-top: 7px;
+    }
+  }
+}
+
+.form-box__end {
+  overflow: hidden;
+  border-radius: 0 0 4px 4px;
+}
+
+/***** Элементы формы ******/
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  @extend %form-element;
+  @extend %form-text;
+  background: $white;
+  border: 3px solid $white;
+  color: $dark-gray;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button {
+  @extend %form-text;
+  @extend %form-element;
+  margin: 10px 0px 0px 0px;
+  background: $apoj-color;
+  border: 0;
+  color: $white;
+  text-align: center;
+  text-shadow: none;
+  box-sizing: border-box;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    outline: 0;
+    opacity: 0.6;
+  }
+  &:focus {
+    outline: 0;
+    opacity: 0.8;
+  }
+}
+
+.error {
+  height: 30%;
+  width: 100%;
+  padding: 0;
+
+  font-size: 85%;
+
+  color: $white;
+  background-color: $error-background;
+  margin-top: 4px;
+  margin-bottom: 7px;
+
+  border-radius: 4px;
+  box-sizing: border-box;
+  &.active {
+    padding: 0.3em;
+  }
+}

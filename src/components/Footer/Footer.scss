@@ -1,0 +1,17 @@
+@import "../../static/css/_config.scss";
+
+footer {
+  margin-top: 50px;
+  color: $white;
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.footer__border {
+  width: 200px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-top: 1px solid $white;
+}

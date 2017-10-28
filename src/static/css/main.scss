@@ -1,0 +1,66 @@
+@import "reset";
+@import "config";
+
+body {
+    font-family: $base-font-family;
+    font-size: 16px;
+    font-weight: 300;
+    color: $dark-gray;
+    line-height: 30px;
+    text-align: center;
+    background: $main-background no-repeat center fixed;
+    background-size: cover;
+}
+
+strong {
+  font-weight: 500;
+}
+
+%h-base {
+  margin-top: 10px;
+  font-weight: 100;
+  color: $white;
+}
+
+h1 {
+  @extend %h-base;
+  font-size: 38px;
+  line-height: 50px;
+}
+
+h2 {
+  @extend %h-base;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+h3 {
+  @extend %h-base;
+  margin: 0;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+::selection {
+  background: $blue;
+  color: $white;
+  text-shadow: none;
+}
+
+/**** content ****/
+
+.content {
+  margin: auto;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+/***** Media queries *****/
+
+@media (min-width: 850px) {
+  .content {
+    width: 40%;
+  }
+}

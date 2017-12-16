@@ -2,11 +2,13 @@ language: node_js
 sudo: false
 node_js:
 - '7'
-
 branches:
   only:
   - develop
-
+addons:
+  apt:
+    packages:
+      - sshpass
 deploy:
   provider: heroku
   api_key:
@@ -16,6 +18,7 @@ deploy:
     repo: frontend-park-mail-ru/2017_2_ToP
     branch: develop
   skip_cleanup: true
-
 script:
   - npm run eslint
+after_success:
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then chmod +x ./master_deploy.sh; ./master_deploy.sh; fi

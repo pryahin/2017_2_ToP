@@ -5,9 +5,6 @@ import UserService from '../../services/UserService/UserService';
 import Loading from '../../components/Loading/Loading';
 
 export default function CreateTopRouter(className, componentsRoutes, defaultComponents) {
-    const theming = new Theming();
-    theming.setTheme();
-
     appendChilds(className, defaultComponents);
     componentsRoutes.forEach(route => router.use(route.path, route.component));
     router.connectRouting(window);
@@ -15,7 +12,7 @@ export default function CreateTopRouter(className, componentsRoutes, defaultComp
     UserService.getData()
         .catch(response => {})
         .then(() => {
-            router.start();
             Loading.hide();
+            router.start();
         });
 }
